@@ -44,7 +44,7 @@ https://docs.microsoft.com/ko-kr/sysinternals/downloads/sigcheck 파일 받는�
 
 파워쉘에서 해야 하네요 c:로 이동 이걸 꼭 적으세요 ㅎ 
 
-c:
+`c:`
 
 `Get-ChildItem Cert:\LocalMachine\Root\c843721cbc3ad29910e1f31c99361eedceb6ddds | Remove-Item`
 
