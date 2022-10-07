@@ -7,15 +7,15 @@ https://cafe.daum.net/candan/I45j/71 예약 작업 등록 방법
 
 https://cafe.daum.net/candan/BLQD/85 본문 내용과 같은 내용 
 
-`schtasks /create /tn "old_cert_del" /tr "cmd /c d:\old_cert_del.cmd" /sc onlogon`
+`schtasks /create /tn "old_cert_del" /tr "cmd /c d:\old_cert_del.cmd" /sc onlogon /RL HIGHEST`
 
 등록방법
 
 .
 
-`schtasks /create /ru "NT Authority\System" /tn "old_cert_del" /tr "cmd /c d:\old_cert_del.cmd" /sc onlogon`
+`schtasks /create /ru "NT Authority\System" /tn "old_cert_del" /tr "cmd /c d:\old_cert_del.cmd" /sc onlogon /RL HIGHEST`
 
-두번째 등록 방법 검은 화면이 보이지 않게 하기. 숨기기 
+두번째 등록 방법 검은 화면이 보이지 않게 하기. 숨기기 /RL HIGHEST 를 꼭 적어 주어야 하네요 안되면 실행 안됨 ㅎㅎ
 
 .
 
