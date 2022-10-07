@@ -60,8 +60,8 @@ https://docs.microsoft.com/ko-kr/sysinternals/downloads/sigcheck 파일 받는�
 
 윈도우 + R
 
-netplwiz
+`netplwiz`
 
-certmgr.msc 
+`certmgr.msc`
 
-certlm.msc
+`certlm.msc`
