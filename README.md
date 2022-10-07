@@ -13,4 +13,4 @@ https://cafe.daum.net/candan/I45j/71 예약 작업 등록 방법
 
 `Get-ChildItem cert:\LocalMachine\root|Where {$_.NotAfter -lt  (Get-Date).AddDays(60)}|select NotAfter, Subject`
 
-오래된 인증서 검색 방법
+파워쉘 오래된 인증서 검색 방법
