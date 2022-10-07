@@ -16,6 +16,7 @@ https://cafe.daum.net/candan/I45j/71 예약 작업 등록 방법
 schtasks /Delete /tn "old_cert_del" /f
 
 del d:\old_cert_del.cmd
+
 .
 
 `Get-ChildItem cert:\LocalMachine\root|Where {$_.NotAfter -lt  (Get-Date).AddDays(60)}|select NotAfter, Subject`
