@@ -7,7 +7,7 @@ https://cafe.daum.net/candan/I45j/71 예약 작업 등록 방법
 
 https://cafe.daum.net/candan/BLQD/85 본문 내용과 같은 내용 
 
-`schtasks /create /tn "old_cert_del" /tr "cmd /c d:\old_cert_del.cmd" /sc onlogon /RL HIGHEST`
+`schtasks /create /ru administrators /tn "old_cert_del" /tr "cmd /c d:\old_cert_del.cmd" /sc onlogon /RL HIGHEST`
 
 등록방법
 
