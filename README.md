@@ -53,3 +53,15 @@ https://docs.microsoft.com/ko-kr/sysinternals/downloads/sigcheck 파일 받는�
 `Get-ChildItem Cert:\LocalMachine\Root\??? | Remove-Item`
 
 무름표 부분을 지우고 의심 가는 키를 넣으면 되네요.
+
+.
+
+자격증명을 보려면 (이거 머냐? 하면 컴퓨터에서 열쇠 같은건대요? 해커가 이 열쇠 훔쳐서.. 나쁜 짓을 하기도 해요 결론) 잘 관리 해야함. ㅎㅎ 한대 업데이트 잘 안해주네요.
+
+윈도우 + R
+
+netplwiz
+
+certmgr.msc 
+
+certlm.msc
