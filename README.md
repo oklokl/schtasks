@@ -35,15 +35,15 @@ del d:\old_cert_del.cmd
 
 https://docs.microsoft.com/ko-kr/sysinternals/downloads/sigcheck 파일 받는곳   
 
-sigcheck.exe –tv 
+`sigcheck.exe –tv`
 
-.\sigcheck.exe -tv
+`.\sigcheck.exe -tv`
 
 
 삭제 방법 Thumbprint: 부분을 적으면 된다.
 
-Get-ChildItem Cert:\LocalMachine\Root\c843721cbc3ad29910e1f31c99361eedceb6ddds | Remove-Item
+`Get-ChildItem Cert:\LocalMachine\Root\c843721cbc3ad29910e1f31c99361eedceb6ddds | Remove-Item`
 
-Get-ChildItem Cert:\LocalMachine\Root\??? | Remove-Item
+`Get-ChildItem Cert:\LocalMachine\Root\??? | Remove-Item`
 
 무름표 부분을 지우고 의심 가는 키를 넣으면 되네요.
