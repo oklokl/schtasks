@@ -42,6 +42,10 @@ https://docs.microsoft.com/ko-kr/sysinternals/downloads/sigcheck 파일 받는�
 
 삭제 방법 Thumbprint: 부분을 적으면 된다.
 
+파워쉘에서 해야 하네요 c:로 이동 이걸 꼭 적으세요 ㅎ 
+
+c:
+
 `Get-ChildItem Cert:\LocalMachine\Root\c843721cbc3ad29910e1f31c99361eedceb6ddds | Remove-Item`
 
 `Get-ChildItem Cert:\LocalMachine\Root\??? | Remove-Item`
