@@ -11,6 +11,8 @@ https://cafe.daum.net/candan/BLQD/85 본문 내용과 같은 내용
 
 등록방법 숨기기 `/RL HIGHEST` 를 꼭 적어 주어야 하네요 안되면 실행 안됨 ㅎㅎ `/ru "NT Authority\System"` 쓰면 숨긴다고 하는대 문제는 이렇게 하면 실행이 안되네요. `/ru administrators`로 필히 써주어야 하네요 그리고  `/RL HIGHEST`를 써주면 숨김 처리 되는 군요
 
+글쓰기
+테스트
 .
 
 만약 필요 없다면 삭제 방법
