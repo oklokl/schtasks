@@ -1,0 +1,14 @@
+echo "https://cafe.daum.net/candan/GGFN/402"
+
+chcp 65001
+schtasks /query /fo LIST /v  > %temp%\txt2.txt
+findstr /c:"OneDrive" %temp%\txt2.txt > %temp%\test.txt
+PowerShell -Command "& {Get-Content %temp%\test.txt | %{$_ -replace '[ -~]* \\'} > %temp%\out444.txt}"
+PowerShell -Command "& {Get-Content %temp%\out444.txt | %{$_ -replace 'Task To Run[ -~]*'} > %temp%\out555.txt}"
+PowerShell -Command "& {Get-Content %temp%\out555.txt | Set-Content %temp%\77777.txt -Encoding utf7}"
+echo "되는지 보기" 두줄이 나오면 정상이다"
+findstr /c:"OneDrive Standalone Update Task" %temp%\77777.txt
+For /F "Delims=" %G In ('findstr /c:"OneDrive Standalone Update Task" %temp%\77777.txt 2^>NUL') Do schtasks /change /tn "%G" /disable
+For /F "Delims=" %G In ('findstr /c:"OneDrive Reporting Task" %temp%\77777.txt 2^>NUL') Do schtasks /change /tn "%G" /disable
+
+chcp 949
