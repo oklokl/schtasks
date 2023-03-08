@@ -1,0 +1,21 @@
+REM "https://cafe.daum.net/candan/HbCr/137"
+REM "1은 파워쉘에서 그대로 출력"
+REM "2는 D:\test.txt로 파일을 만듬(목록이 많을 경우 사용 할수 있겠죠?)"
+REM " 수정은 1:00 PM 2 PM 이부분 수정 하면 되겠죠? 아침은 AM 이에요."
+REM "Get-ScheduledTask 이게 해답이였네요 이걸로 하니 출력 되네요. https://youtu.be/L-70KV6lPQU"
+ 
+$startTime = Get-Date "1:00 PM"
+$endTime = Get-Date "2:00 PM"
+Get-ScheduledTask | Where-Object {$_.State -eq "Ready" -and $_.Triggers.StartBoundary -as [datetime] -ge $startTime -and $_.Triggers.StartBoundary -as [datetime] -le $endTime} | Select-Object TaskName, TaskPath, Triggers
+
+REM "txt 파일로 만들기"
+$startTime = Get-Date "1:00 PM"
+$endTime = Get-Date "2:00 PM"
+Get-ScheduledTask | Where-Object {$_.State -eq "Ready" -and $_.Triggers.StartBoundary -as [datetime] -ge $startTime -and $_.Triggers.StartBoundary -as [datetime] -le $endTime} | Select-Object TaskName, TaskPath, Triggers | Out-File -FilePath "d:\test.txt"
+
+REM "테스트로 등록 해보기"
+REM "이 예제에서는 매일 정오(12:00 PM)에 DNS 캐시를 자동으로 삭제합니다."
+schtasks /create /tn "주기적 DNS 캐시 삭제" /tr "cmd /c ipconfig /flushdns" /sc daily /st 13:44
+
+REM "등록 한거 지우기"
+schtasks /delete /tn "주기적 DNS 캐시 삭제" /F
