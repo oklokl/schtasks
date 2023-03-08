@@ -1,0 +1,7 @@
+REM "예약작업 행이 긴 경우 찾기 글자가 길면 중간에 스킵 해버리는대 그걸 찾아 주는 명령어 이다"
+REM "https://cafe.daum.net/candan/GGFN/427"
+
+Get-ScheduledTask | Where-Object {$_.State -eq 'Ready'} | Select-Object TaskName,TaskPath,State,LastRunTime,NextRunTime | ConvertTo-Csv -Delimiter "`n" -NoTypeInformation | Out-File -FilePath "D:\File.csv" -Encoding utf8
+
+Get-ScheduledTask | Where-Object {$_.State -match 'Ready|Running|Disabled'} | Select-Object TaskName, TaskPath, State, LastRunTime, NextRunTime | ConvertTo-Csv -Delimiter "," -NoTypeInformation | Out-File -FilePath "D:\File.csv" -Encoding utf8
+
