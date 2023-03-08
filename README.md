@@ -7,7 +7,9 @@ https://cafe.daum.net/candan/I45j/71 예약 작업 등록 방법
 
 https://cafe.daum.net/candan/BLQD/85 본문 내용과 같은 내용 
 
-https://cafe.daum.net/candan/HbCr/137 예약작업 찾기 등록 되어 있는 것들 찾아야 할때.
+https://cafe.daum.net/candan/HbCr/137 실행 준비 예약작업 찾기 등록 되어 있는 것들 찾아야 할때.
+
+https://cafe.daum.net/candan/GGFN/427 긴글자 찾기 행이 긴 경우 스킵 되는대 그걸 찾는 방법이다.
 
 `schtasks /create /ru administrators /tn "old_cert_del" /tr "cmd /c d:\old_cert_del.cmd" /sc onlogon /RL HIGHEST`
 
