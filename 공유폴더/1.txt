@@ -1,0 +1,7 @@
+REM "공유 삭제"
+schtasks /create /tn "remove_IPC 공유" /tr "%WINDIR%\System32\net.exe share /delete IPC$ & exit" /sc ONLOGON /rl HIGHEST /np
+schtasks /create /tn "remove_IPC 공유2" /tr "%WINDIR%\System32\net.exe share /delete ADMIN$ & exit" /sc ONLOGON /rl HIGHEST /np
+
+REM "늦게 해야 한다.. 늦게 삭제 해야 적용 되는"
+schtasks /create /tn "remove_IPC 공유3" /tr "%WINDIR%\System32\net.exe share /delete C$ & exit" /sc ONLOGON /rl HIGHEST /np /DELAY 0000:30
+schtasks /create /tn "remove_IPC 공유4" /tr "%WINDIR%\System32\net.exe share /delete D$ & exit" /sc ONLOGON /rl HIGHEST /np /DELAY 0001:00
