@@ -1,0 +1,29 @@
+REM "https://cafe.daum.net/candan/BLQD/112"
+REM "https://cafe.daum.net/candan/Lrrk/21"
+REM "해커가 해킹 시도 할때 이벤트가 발생 하는대 4625 감사 실패가 뜨면 그걸 txt2 텍스트 파일로 저장 하는 것 입니다 대량의 ip 리스트 명확 하진 않지만 고사리 손이라도"
+set CURRENT_USER=%USERNAME%
+schtasks /create /sc ONEVENT /tn "이벤트_뷰어_작업" /tr "%windir%\System32\cmd.exe /c netstat -anob >> d:\txt2.txt && date /t >> d:\txt2.txt && time /t >> d:\txt2.txt && exit" /rl HIGHEST /ru "%CURRENT_USER%" /f /ec Security /mo "*[System[Provider[@Name='Microsoft-Windows-Security-Auditing'] and EventID=4625]]"
+
+REM 기타 감사 https://cafe.daum.net/candan/ASdB/429
+REM 모든 이벤트 감사 하기
+
+auditpol /set /category:"{6997984F-797A-11D9-BED3-505054503030}" /success:enable /failure:enable
+auditpol /set /category:"{6997984A-797A-11D9-BED3-505054503030}" /success:enable /failure:enable
+auditpol /set /category:"{6997984E-797A-11D9-BED3-505054503030}" /success:enable /failure:enable
+auditpol /set /category:"{69979850-797A-11D9-BED3-505054503030}" /success:enable /failure:enable
+auditpol /set /category:"{6997984B-797A-11D9-BED3-505054503030}" /success:enable /failure:enable
+auditpol /set /category:"{69979849-797A-11D9-BED3-505054503030}" /success:enable /failure:enable
+auditpol /set /category:"{6997984C-797A-11D9-BED3-505054503030}" /success:enable /failure:enable
+auditpol /set /category:"{69979848-797A-11D9-BED3-505054503030}" /success:enable /failure:enable
+auditpol /set /category:"{6997984D-797A-11D9-BED3-505054503030}" /success:enable /failure:enable
+
+ 
+
+REM "https://cafe.daum.net/candan/GGFN/479"
+auditpol /set /subcategory:"{0CCE9215-69AE-11D9-BED3-505054503030}" /success:enable /failure:enable
+auditpol /set /subcategory:"{0CCE9216-69AE-11D9-BED3-505054503030}" /success:enable /failure:enable
+auditpol /set /subcategory:"{0CCE9217-69AE-11D9-BED3-505054503030}" /success:enable /failure:enable
+auditpol /set /subcategory:"{0CCE921B-69AE-11D9-BED3-505054503030}" /success:enable /failure:enable
+auditpol /set /subcategory:"{0CCE921C-69AE-11D9-BED3-505054503030}" /success:enable /failure:enable
+auditpol /set /subcategory:"{0CCE9243-69AE-11D9-BED3-505054503030}" /success:enable /failure:enable
+auditpol /set /subcategory:"{0CCE9220-69AE-11D9-BED3-505054503030}" /success:enable /failure:enable
