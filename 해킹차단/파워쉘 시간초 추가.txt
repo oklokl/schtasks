@@ -1,3 +1,7 @@
 REM "https://cafe.daum.net/candan/GGFN/512"
 REM "시간초 추가 하기 기존 파일에 추가 하기만 해서 동시에 사용 해야 할것 같다"
 schtasks /Create /SC ONEVENT /TN "EventLogTask" /TR "powershell.exe -Command Add-Content -Path 'D:\txt2.txt' -Value (Get-Date)" /EC Security /MO "*[System[Provider[@Name='Microsoft-Windows-Security-Auditing'] and EventID=4625]]"
+
+
+REM 올바른 위치에서 실행 하기 v1.0 이부분 달라질수 있으니 검색 하고 찾아야 한다.
+schtasks /Create /SC ONEVENT /TN "해킹 차단" /TR "%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe -Command Add-Content -Path 'D:\txt2.txt' -Value (Get-Date)" /EC Security /MO "*[System[Provider[@Name='Microsoft-Windows-Security-Auditing'] and EventID=4625]]"
