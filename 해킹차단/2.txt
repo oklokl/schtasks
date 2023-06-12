@@ -1,2 +1,2 @@
 REM "시간초를 파워쉘로 https://cafe.daum.net/candan/GGFN/511"
-schtasks /create /sc ONEVENT /tn "이벤트_뷰어_작업" /tr "%windir%\System32\cmd.exe /c netstat -anob >> d:\txt2.txt && powershell -Command \"Get-Date -Format 'yyyy-MM-dd HH:mm:ss.ff'\" >> d:\txt.txt && exit" /rl HIGHEST /ru "%CURRENT_USER%" /f /ec Security /mo "*[System[Provider[@Name='Microsoft-Windows-Security-Auditing'] and EventID=4625]]"
+schtasks /create /sc ONEVENT /tn "이벤트_뷰어_작업" /tr "%windir%\System32\cmd.exe /c netstat -anob >> d:\txt2.txt && powershell -Command \"Get-Date -Format 'yyyy-MM-dd HH:mm:ss.ff'\" >> d:\txt2.txt && exit" /rl HIGHEST /ru "%CURRENT_USER%" /f /ec Security /mo "*[System[Provider[@Name='Microsoft-Windows-Security-Auditing'] and EventID=4625]]"
