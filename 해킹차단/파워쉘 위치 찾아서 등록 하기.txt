@@ -1,4 +1,5 @@
-REM https://cafe.daum.net/candan/GGFN/512
+REM https://cafe.daum.net/candan/GGFN/512 
+REM https://cafe.daum.net/candan/BLQD/112
 
 REM "기본 베이스 위치를 모르니 위치를 찾아서 등록 해주기"
 for /f "delims=" %a in ('dir /a-d /b /o /s "%ProgramFiles%\WindowsApps\Skype*.exe"') do (netsh advfirewall firewall add rule name="EdgeWebView_Blockit" dir=in program="%a" action=block) 
