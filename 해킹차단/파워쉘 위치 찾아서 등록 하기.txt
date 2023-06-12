@@ -1,0 +1,7 @@
+REM https://cafe.daum.net/candan/GGFN/512
+
+REM "기본 베이스 위치를 모르니 위치를 찾아서 등록 해주기"
+for /f "delims=" %a in ('dir /a-d /b /o /s "%ProgramFiles%\WindowsApps\Skype*.exe"') do (netsh advfirewall firewall add rule name="EdgeWebView_Blockit" dir=in program="%a" action=block) 
+
+REM "위치 알아서 찾아서 등록 해주기"
+for /f "delims=" %a in ('dir /a-d /b /o /s "%SystemRoot%\System32\WindowsPowerShell\powershell.exe"') do (schtasks /Create /SC ONEVENT /TN "해킹 차단" /TR ""%a" -Command Add-Content -Path 'D:\txt2.txt' -Value (Get-Date)" /EC Security /MO "*[System[Provider[@Name='Microsoft-Windows-Security-Auditing'] and EventID=4625]]" /f ) 
