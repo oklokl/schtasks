@@ -6,3 +6,16 @@ for /f "delims=" %a in ('dir /a-d /b /o /s "%ProgramFiles%\WindowsApps\Skype*.ex
 
 REM "위치 알아서 찾아서 등록 해주기"
 for /f "delims=" %a in ('dir /a-d /b /o /s "%SystemRoot%\System32\WindowsPowerShell\powershell.exe"') do (schtasks /Create /SC ONEVENT /TN "해킹 차단" /TR ""%a" -Command Add-Content -Path 'D:\txt2.txt' -Value (Get-Date)" /EC Security /MO "*[System[Provider[@Name='Microsoft-Windows-Security-Auditing'] and EventID=4625]]" /f ) 
+
+
+RED 완성품
+REM "https://cafe.daum.net/candan/BLQD/112"
+REM "4625 감사실패시에 이벤트 d:\txt2.txt 에 기록 하기"
+set CURRENT_USER=%USERNAME%
+schtasks /create /sc ONEVENT /tn "해킹 차단1" /tr "%windir%\System32\cmd.exe /c netstat -anob >> d:\txt2.txt && date /t >> d:\txt2.txt && time /t >> d:\txt2.txt && exit" /rl HIGHEST /ru "%CURRENT_USER%" /f /ec Security /mo "*[System[Provider[@Name='Microsoft-Windows-Security-Auditing'] and EventID=4625]]"
+
+REM "같은 조건으로 초 단위 까지 기록 하기"
+for /f "delims=" %a in ('dir /a-d /b /o /s "%SystemRoot%\System32\WindowsPowerShell\powershell.exe"') do (schtasks /Create /SC ONEVENT /TN "해킹 차단2" /TR ""%a" -Command Add-Content -Path 'D:\txt2.txt' -Value (Get-Date)" /EC Security /MO "*[System[Provider[@Name='Microsoft-Windows-Security-Auditing'] and EventID=4625]]" /f ) 
+
+REM schtasks /delete /tn "해킹 차단1" /f
+REM schtasks /delete /tn "해킹 차단2" /f
