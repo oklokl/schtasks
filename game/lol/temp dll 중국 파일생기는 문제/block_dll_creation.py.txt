@@ -1,0 +1,10 @@
+https://cafe.daum.net/candan/GGFN/522
+win32file 설치
+https://m.blog.naver.com/opening_line/222324033439
+pip install pypiwin32
+pip install psutil
+
+schtasks /create /tn "Block DLL Creation" /tr "python d:\block_dll_creation.py" /sc onstart /ru SYSTEM
+
+echo Test DLL > %temp%\test.dll
+테스트
