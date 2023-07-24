@@ -14,3 +14,7 @@ echo Test DLL > %temp%\test.dll
 echo AI가 알려준거 안된다 위 처럼 해야 한다
 for /f "delims=" %a in ('dir /a-d /b /s "%localappdata%\Programs\Python\python.exe"') do (schtasks /create /tn "Block DLL Creation" /tr "%a d:\block_dll_creation.py" /sc onstart)
 
+
+7.txt 아래 설명 3은 좀더 강력 한거라고 한다 3_1는 여려개 dll exe bat
+
+마찬가지로 2_1도 dll exe bat 추가로 생성 차단이다 
