@@ -4,12 +4,12 @@ https://m.blog.naver.com/opening_line/222324033439
 pip install pypiwin32
 pip install psutil
 
-for /f "delims=" %a in ('dir /a-d /b /o /s "%localappdata%\Programs\Python\python.exe"') do (schtasks /create /tn "Block DLL Creation" /tr "%a d:\block_dll_creation.py" /sc onstart) 
+for /f "delims=" %a in ('dir /a-d /b /o /s "%localappdata%\Programs\Python\python.exe"') do (schtasks /create /tn "Block DLL Creation" /tr "%a d:\block_dll_creation.py" /sc ONLOGON /rl HIGHEST) 
 echo 이때 주의 해야 할 부분은 모두 예스 하면 안된다 한번만 예스 해야 한다
 
 echo Test DLL > %temp%\test.dll
 테스트
 
-echo AI가 알려준거
+echo AI가 알려준거 안된다 위 처럼 해야 한다
 for /f "delims=" %a in ('dir /a-d /b /s "%localappdata%\Programs\Python\python.exe"') do (schtasks /create /tn "Block DLL Creation" /tr "%a d:\block_dll_creation.py" /sc onstart)
 
