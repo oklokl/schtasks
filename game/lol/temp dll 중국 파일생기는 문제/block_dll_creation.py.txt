@@ -3,6 +3,7 @@ win32file 설치
 https://m.blog.naver.com/opening_line/222324033439
 pip install pypiwin32
 pip install psutil
+pip install watchdog
 
 for /f "delims=" %a in ('dir /a-d /b /o /s "%localappdata%\Programs\Python\python.exe"') do (schtasks /create /tn "Block DLL Creation" /tr "%a d:\block_dll_creation.py" /sc ONLOGON /rl HIGHEST) 
 echo 이때 주의 해야 할 부분은 모두 예스 하면 안된다 한번만 예스 해야 한다
